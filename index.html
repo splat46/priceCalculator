@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Form</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style rel="stylesheet">
+        label {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="h-full">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto  py-5">
+                <div class="p-4 bg-light border">
+                    <h1 class="mb-5">Calculate the price</h1>
+                    <form>
+                        <div class="row mb-4">
+                            <div class="col-3">
+                                <label class="form-label">Oplage
+                            </div>
+                            <div class="col-9">
+                                <input id="quantity" type="number" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-3">
+                                <label class="form-label">Formaat
+                            </div>
+                            <div class="col-9">
+                                <label>
+                                    <input type="radio" name="size" value="A4" /> A4
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="A5" /> A5
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="A6" /> A6
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="A7" /> A7
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-3">
+                                <label class="form-label">Opdruk
+                            </div>
+                            <div class="col-9">
+                                <label>
+                                    <input type="radio" name="color" value="kleur" /> Kleur
+                                </label>
+                                <label>
+                                    <input type="radio" name="color" value="zwartWit" /> Zwart/wit
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-3">
+                                <label class="form-label">Printwijze
+                            </div>
+                            <div class="col-9">
+                                <label>
+                                    <input type="radio" name="printType" value="enkelzijdig" /> Enkelzijdig
+                                </label>
+                                <label>
+                                    <input type="radio" name="printType" value="dubbelzijdig" /> Dubbelzijdig
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="randloos" name="randloos" /> Randloos printen
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-3">
+                                <label class="form-label">Papiersoort
+                            </div>
+                            <div class="col-9">
+                                <label>
+                                    <input type="radio" name="paper" value="normaal" /> Standaard (80 gr)
+                                </label>
+                                <label>
+                                    <input type="radio" name="paper" value="stevig" /> Stevig (100 grams)
+                                </label>
+                                <label>
+                                    <input type="radio" name="paper" value="steviger" /> Steviger (120 grams)
+                                </label>
+                                <label>
+                                    <input type="radio" name="paper" value="extraStevig" /> Extra Stevig (160 grams)
+                                </label>
+                                <label>
+                                    <input type="radio" name="paper" value="zeerStevig" /> Zeer stevig (200 grams)
+                                </label>
+                                <label>
+                                    <input type="radio" name="paper" value="natuurkarton" /> Natuurkarton (300 grams)
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary mb-4">Berekenen</button>
+                            <div class="p-4 bg-info">
+                                <div>Prijs: &euro; <span id="price">0</span></div>
+                                <div class="mb-2">BTW: &euro; <span id="priceBTW"></span></div>
+
+                                <div>Totaal incl. BTW: &euro; <span id="priceTotal"></span></div>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
