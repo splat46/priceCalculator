@@ -1,15 +1,28 @@
-const price = document.getElementById("price").innerHTML;
+// get price incl. BTW
 const totalPrice = (document.getElementById("priceTotal").innerHTML = btwCalc(
   price
-));
+).toFixed(2));
+
+function logPriceCalc(event) {
+  // get quantity of products
+  const quantity = document.getElementById("quantity").value;
+  console.log(quantity);
+
+  // get price - BTW
+  const price = (document.getElementById("price").innerHTML = 0.8 * quantity);
+
+  event.preventDefault();
+}
+
+// get BTW
 const btwPrice = (document.getElementById("priceBTW").innerHTML =
   totalPrice - price);
 
-function btwCalc(cost) {
+// Calc BTW
+function btwCalc(price) {
   const BTW = 21;
-  return (cost / 100) * (BTW + 100);
+  return (price / 100) * (BTW + 100);
 }
 
-const quantity = document.getElementById("quantity").value;
-
-console.log(quantity);
+const priceCalculator = document.querySelector("#priceCalculator");
+priceCalculator.addEventListener("submit", logPriceCalc);

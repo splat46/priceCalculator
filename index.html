@@ -18,13 +18,13 @@
             <div class="col-md-6 mx-auto  py-5">
                 <div class="p-4 bg-light border">
                     <h1 class="mb-5">Calculate the price</h1>
-                    <form>
+                    <form id="priceCalculator" name="priceCalculator">
                         <div class="row mb-4">
                             <div class="col-3">
                                 <label class="form-label">Oplage
                             </div>
                             <div class="col-9">
-                                <input id="quantity" type="number" class="form-control" />
+                                <input id="quantity" type="number" value="1" class="form-control" />
                             </div>
                         </div>
                         <div class="row mb-4">
@@ -101,15 +101,14 @@
                             </div>
                         </div>
                         <div>
-                            <button class="btn btn-primary mb-4">Berekenen</button>
+                            <button type="submit" class="btn btn-primary mb-4">Berekenen</button>
                             <div class="p-4 bg-info">
-                                <div>Prijs: &euro; <span id="price">0</span></div>
-                                <div class="mb-2">BTW: &euro; <span id="priceBTW"></span></div>
+                                <div>Prijs: &euro; <span id="price"></span></div>
+                                <div class="mb-2">BTW (21%): &euro; <span id="priceBTW"></span></div>
 
                                 <div>Totaal incl. BTW: &euro; <span id="priceTotal"></span></div>
                             </div>
                         </div>
-                        
                     </form>
                 </div>
             </div>
