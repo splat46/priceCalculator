@@ -12,10 +12,10 @@
         }
     </style>
 </head>
-<body class="h-full">
+<body class="h-full py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 mx-auto  py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
                 <div class="p-4 bg-light border">
                     <h1 class="mb-5">Calculate the price</h1>
                     <form id="priceCalculator" name="priceCalculator">
@@ -52,7 +52,7 @@
                             </div>
                             <div class="col-9">
                                 <label>
-                                    <input type="radio" name="color" value="kleur" /> Kleur
+                                    <input type="radio" name="color" value="kleur" checked/> Kleur
                                 </label>
                                 <label>
                                     <input type="radio" name="color" value="zwartWit" /> Zwart/wit
@@ -65,7 +65,7 @@
                             </div>
                             <div class="col-9">
                                 <label>
-                                    <input type="radio" name="printType" value="enkelzijdig" /> Enkelzijdig
+                                    <input type="radio" name="printType" value="enkelzijdig" checked/> Enkelzijdig
                                 </label>
                                 <label>
                                     <input type="radio" name="printType" value="dubbelzijdig" /> Dubbelzijdig
@@ -81,7 +81,7 @@
                             </div>
                             <div class="col-9">
                                 <label>
-                                    <input type="radio" name="paper" value="normaal" /> Standaard (80 gr)
+                                    <input type="radio" name="paper" value="normaal" checked/> Standaard (80 gr)
                                 </label>
                                 <label>
                                     <input type="radio" name="paper" value="stevig" /> Stevig (100 grams)
@@ -100,16 +100,17 @@
                                 </label>
                             </div>
                         </div>
-                        <div>
-                            <button type="submit" class="btn btn-primary mb-4">Berekenen</button>
-                            <div class="p-4 bg-info">
-                                <div>Prijs: &euro; <span id="price"></span></div>
-                                <div class="mb-2">BTW (21%): &euro; <span id="priceBTW"></span></div>
+                        <button type="submit" class="btn btn-primary mb-4">Berekenen</button>
 
-                                <div>Totaal incl. BTW: &euro; <span id="priceTotal"></span></div>
-                            </div>
-                        </div>
                     </form>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="p-4 bg-info">
+                    <div>Prijs: &euro; <span id="price"></span></div>
+                    <div class="mb-2">BTW (21%): &euro; <span id="priceBTW"></span></div>
+
+                    <div>Totaal incl. BTW: &euro; <span id="priceTotal"></span></div>
                 </div>
             </div>
         </div>
