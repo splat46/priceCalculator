@@ -18,106 +18,105 @@
             <div class="col-md-4">
                 <div class="p-4 bg-light border">
                     <h1 class="mb-5">Calculate the price</h1>
-                    <form id="priceCalculator" name="priceCalculator">
-                        <div class="row mb-4">
-                            <div class="col-3">
-                                <label class="form-label">Oplage
-                            </div>
-                            <div class="col-9">
-                                <input id="quantity" type="number" value="1" class="form-control" />
-                            </div>
+                    <div class="row mb-4">
+                        <div class="col-3">
+                            <label class="form-label">Oplage
                         </div>
-                        <div class="row mb-4">
-                            <div class="col-3">
-                                <label class="form-label">Formaat
-                            </div>
-                            <div class="col-9">
-                                <label>
-                                    <input type="radio" name="size" value="A4" /> A4
-                                </label>
-                                <label>
-                                    <input type="radio" name="size" value="A5" /> A5
-                                </label>
-                                <label>
-                                    <input type="radio" name="size" value="A6" /> A6
-                                </label>
-                                <label>
-                                    <input type="radio" name="size" value="A7" /> A7
-                                </label>
-                            </div>
+                        <div class="col-9">
+                            <input onchange="calculator.updateQuantity(parseInt(this.value))" id="quantity" type="number" value="1" class="form-control" />
                         </div>
-                        <div class="row mb-4">
-                            <div class="col-3">
-                                <label class="form-label">Opdruk
-                            </div>
-                            <div class="col-9">
-                                <label>
-                                    <input type="radio" name="color" value="kleur" checked/> Kleur
-                                </label>
-                                <label>
-                                    <input type="radio" name="color" value="zwartWit" /> Zwart/wit
-                                </label>
-                            </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-3">
+                            <label class="form-label">Formaat
                         </div>
-                        <div class="row mb-4">
-                            <div class="col-3">
-                                <label class="form-label">Printwijze
-                            </div>
-                            <div class="col-9">
-                                <label>
-                                    <input type="radio" name="printType" value="enkelzijdig" checked/> Enkelzijdig
-                                </label>
-                                <label>
-                                    <input type="radio" name="printType" value="dubbelzijdig" /> Dubbelzijdig
-                                </label>
-                                <label>
-                                    <input type="checkbox" value="randloos" name="randloos" /> Randloos printen
-                                </label>
-                            </div>
+                        <div class="col-9">
+                            <label>
+                                <input onchange="calculator.updateSize(4)" type="radio" name="size" value="A4" /> A4
+                            </label>
+                            <label>
+                                <input onchange="calculator.updateSize(5)" type="radio" name="size" value="A5" /> A5
+                            </label>
+                            <label>
+                                <input onchange="calculator.updateSize(6)" type="radio" name="size" value="A6" /> A6
+                            </label>
+                            <label>
+                                <input onchange="calculator.updateSize(7)" type="radio" name="size" value="A7" /> A7
+                            </label>
                         </div>
-                        <div class="row mb-4">
-                            <div class="col-3">
-                                <label class="form-label">Papiersoort
-                            </div>
-                            <div class="col-9">
-                                <label>
-                                    <input type="radio" name="paper" value="normaal" checked/> Standaard (80 gr)
-                                </label>
-                                <label>
-                                    <input type="radio" name="paper" value="stevig" /> Stevig (100 grams)
-                                </label>
-                                <label>
-                                    <input type="radio" name="paper" value="steviger" /> Steviger (120 grams)
-                                </label>
-                                <label>
-                                    <input type="radio" name="paper" value="extraStevig" /> Extra Stevig (160 grams)
-                                </label>
-                                <label>
-                                    <input type="radio" name="paper" value="zeerStevig" /> Zeer stevig (200 grams)
-                                </label>
-                                <label>
-                                    <input type="radio" name="paper" value="natuurkarton" /> Natuurkarton (300 grams)
-                                </label>
-                            </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-3">
+                            <label class="form-label">Opdruk
                         </div>
-                        <button type="submit" class="btn btn-primary mb-4">Berekenen</button>
-
-                    </form>
+                        <div class="col-9">
+                            <label>
+                                <input onchange="calculator.updateColor(true)" type="radio" name="color" value="kleur" checked/> Kleur
+                            </label>
+                            <label>
+                                <input onchange="calculator.updateColor(false)" type="radio" name="color" value="zwartWit" /> Zwart/wit
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-3">
+                            <label class="form-label">Printwijze
+                        </div>
+                        <div class="col-9">
+                            <label>
+                                <input type="radio" name="printType" value="enkelzijdig" checked/> Enkelzijdig
+                            </label>
+                            <label>
+                                <input type="radio" name="printType" value="dubbelzijdig" /> Dubbelzijdig
+                            </label>
+                            <label>
+                                <input type="checkbox" value="randloos" name="randloos" /> Randloos printen
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-3">
+                            <label class="form-label">Papiersoort
+                        </div>
+                        <div class="col-9">
+                            <label>
+                                <input onchange="calculator.updatePaper(80)" type="radio" name="paper" value="normaal" checked/> Standaard (80 gr)
+                            </label>
+                            <label>
+                                <input onchange="calculator.updatePaper(100)" type="radio" name="paper" value="stevig" /> Stevig (100 grams)
+                            </label>
+                            <label>
+                                <input onchange="calculator.updatePaper(120)" type="radio" name="paper" value="steviger" /> Steviger (120 grams)
+                            </label>
+                            <label>
+                                <input onchange="calculator.updatePaper(160)" type="radio" name="paper" value="extraStevig" /> Extra Stevig (160 grams)
+                            </label>
+                            <label>
+                                <input onchange="calculator.updatePaper(200)" type="radio" name="paper" value="zeerStevig" /> Zeer stevig (200 grams)
+                            </label>
+                            <label>
+                                <input onchange="calculator.updatePaper(300)" type="radio" name="paper" value="natuurkarton" /> Natuurkarton (300 grams)
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-4">
                 <div class="p-4 bg-info">
-                    <div>Prijs: &euro; <span id="price"></span></div>
-                    <div class="mb-2">BTW (21%): &euro; <span id="priceBTW"></span></div>
+                    <div>Prijs: &euro; <span id="subtotal"></span></div>
+                    <div class="mb-2">BTW (21%): &euro; <span id="vat"></span></div>
 
-                    <div>Totaal incl. BTW: &euro; <span id="priceTotal"></span></div>
+                    <div>Totaal incl. BTW: &euro; <span id="total"></span></div>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
+    <script>
+        const calculator = new Calculator()
+    </script>
 
 </body>
 </html>
