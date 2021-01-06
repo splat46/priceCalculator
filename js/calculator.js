@@ -4,9 +4,10 @@ class Calculator {
     this.size = 4;
     this.color = true;
     this.paper = 80;
+    this.basePrice = 1.25;
 
     this.subtotal = 0;
-    this.vat = 0;
+    this.vat = 21;
     this.total = 0;
 
     this.calculate();
@@ -32,12 +33,24 @@ class Calculator {
     this.calculate();
   }
 
+  calculatePaperPrice(price) {
+    if (this.size === 4) return price;
+    if (this.size === 5) return price / 2;
+    if (this.size === 6) return price / 4;
+    if (this.size === 7) return price / 8;
+
+    alert("Paper size not available");
+  }
+
   calculate() {
-    // TODO: Fix caculator
+    let subtotal = this.basePrice;
 
+    subtotal = this.calculatePaperPrice(subtotal);
+    subtotal = subtotal * this.quantity;
+
+    this.subtotal = subtotal;
+    this.vat = this.subtotal * 0.21;
     this.total = this.subtotal + this.vat;
-
-    console.log(this);
 
     document.getElementById("subtotal").innerHTML = this.subtotal.toFixed(2);
     document.getElementById("vat").innerHTML = this.vat.toFixed(2);
