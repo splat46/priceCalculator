@@ -4,7 +4,7 @@ class Calculator {
     this.size = 4;
     this.color = true;
     this.paper = 80;
-    this.basePrice = 1.25;
+    this.basePrice = 0;
 
     this.subtotal = 0;
     this.vat = 21;
@@ -42,10 +42,21 @@ class Calculator {
     alert("Paper size not available");
   }
 
+  calculateColorPrice(price) {
+    if (this.color === false) return price + 0.1;
+    if (this.color === true) return price + 0.5;
+
+    alert("Color not available");
+  }
+
   calculate() {
     let subtotal = this.basePrice;
 
+    subtotal = this.calculateColorPrice(subtotal);
     subtotal = this.calculatePaperPrice(subtotal);
+
+    console.log(subtotal);
+
     subtotal = subtotal * this.quantity;
 
     this.subtotal = subtotal;

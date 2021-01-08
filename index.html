@@ -23,7 +23,7 @@
                             <label class="form-label">Oplage
                         </div>
                         <div class="col-9">
-                            <input onchange="calculator.updateQuantity(parseInt(this.value))" id="quantity" type="number" value="1" class="form-control" />
+                            <input onchange="calculator.updateQuantity(parseInt(this.value))" id="quantity" min="1" type="number" value="1" class="form-control" />
                         </div>
                     </div>
                     <div class="row mb-4">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-9">
                             <label>
-                                <input onchange="calculator.updateSize(4)" type="radio" name="size" value="A4" selected /> A4
+                                <input onchange="calculator.updateSize(4)" type="radio" name="size" value="A4" checked /> A4
                             </label>
                             <label>
                                 <input onchange="calculator.updateSize(5)" type="radio" name="size" value="A5" /> A5
@@ -64,10 +64,10 @@
                         </div>
                         <div class="col-9">
                             <label>
-                                <input type="radio" name="printType" value="enkelzijdig" checked/> Enkelzijdig
+                                <input onchange="calculator.updateType(true)" type="radio" name="printType" value="enkelzijdig" checked/> Enkelzijdig
                             </label>
                             <label>
-                                <input type="radio" name="printType" value="dubbelzijdig" /> Dubbelzijdig
+                                <input onchange="calculator.updateType(false)" type="radio" name="printType" value="dubbelzijdig" /> Dubbelzijdig
                             </label>
                             <label>
                                 <input type="checkbox" value="randloos" name="randloos" /> Randloos printen
